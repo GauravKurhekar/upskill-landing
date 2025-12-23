@@ -2,8 +2,25 @@
 
 import { motion } from "framer-motion";
 import { FaCloud, FaChartLine, FaCertificate, FaRocket } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { getHeroSection } from "@/sanity/lib/queries";
 
 export default function Hero() {
+  const [heroData, setHeroData] = useState<any>(null);
+
+  // Fetch hero data from Sanity
+  useEffect(() => {
+    async function loadHero() {
+      try {
+        const data = await getHeroSection();
+        setHeroData(data);
+      } catch (error) {
+        console.error('Error loading hero:', error);
+      }
+    }
+    loadHero();
+  }, []);
+
   const floatingIcons = [
     { Icon: FaCloud, delay: 0, position: "top-20 left-10" },
     { Icon: FaChartLine, delay: 0.2, position: "top-40 right-20" },
@@ -60,9 +77,9 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
           >
-            Build a High-Income Career in{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Azure Data Engineering
+            {heroData?.headlineBeforeHighlight || "Build a High-Income Career in"}{" "}
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent whitespace-nowrap">
+              {heroData?.headlineHighlight || "Azure Data Engineering"}
             </span>
           </motion.h1>
 
@@ -73,8 +90,9 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Get personalized direction from a Microsoft & Databricks Certified Senior Data Engineer 
-            with 9+ years of experience solving real-world data problems.
+            {heroData?.subheadline || 
+              "Get personalized direction from a Microsoft & Databricks Certified Senior Data Engineer with 9+ years of experience solving real-world data problems."
+            }
           </motion.p>
 
           {/* CTA Buttons */}

@@ -1,15 +1,30 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { getFAQs } from "@/sanity/lib/queries";
 
 export default function FAQ() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [faqs, setFaqs] = useState<any[]>([]);
 
-  const faqs = [
+  // Fetch FAQs from Sanity
+  useEffect(() => {
+    async function loadFAQs() {
+      try {
+        const data = await getFAQs();
+        setFaqs(data);
+      } catch (error) {
+        console.error('Error loading FAQs:', error);
+      }
+    }
+    loadFAQs();
+  }, []);
+
+  const fallbackFaqs = [
     {
       question: "Who is this session for?",
       answer:
@@ -52,6 +67,9 @@ export default function FAQ() {
     },
   ];
 
+  // Use Sanity data if available, otherwise use fallback
+  const displayFaqs = faqs.length > 0 ? faqs : fallbackFaqs;
+
   return (
     <section id="faq" className="py-20 bg-white" ref={ref}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,9 +93,9 @@ export default function FAQ() {
 
         {/* FAQ Items */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {displayFaqs.map((faq: any, index: number) => (
             <motion.div
-              key={index}
+              key={faq._id || index}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.05 }}

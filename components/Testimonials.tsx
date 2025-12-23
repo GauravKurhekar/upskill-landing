@@ -1,14 +1,29 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
+import { getTestimonials } from "@/sanity/lib/queries";
 
 export default function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [testimonials, setTestimonials] = useState<any[]>([]);
 
-  const testimonials = [
+  // Fetch testimonials from Sanity
+  useEffect(() => {
+    async function loadTestimonials() {
+      try {
+        const data = await getTestimonials();
+        setTestimonials(data);
+      } catch (error) {
+        console.error('Error loading testimonials:', error);
+      }
+    }
+    loadTestimonials();
+  }, []);
+
+  const fallbackTestimonials = [
     {
       name: "Priya Sharma",
       role: "Data Engineer at Microsoft",
@@ -53,6 +68,9 @@ export default function Testimonials() {
     },
   ];
 
+  // Use Sanity data if available, otherwise use fallback
+  const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
+
   return (
     <section
       id="testimonials"
@@ -80,9 +98,9 @@ export default function Testimonials() {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {displayTestimonials.map((testimonial: any, index: number) => (
             <motion.div
-              key={index}
+              key={testimonial._id || index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -110,7 +128,9 @@ export default function Testimonials() {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-700 leading-relaxed">{testimonial.text}</p>
+              <p className="text-gray-700 leading-relaxed">
+                {testimonial.testimonial || testimonial.text}
+              </p>
             </motion.div>
           ))}
         </div>

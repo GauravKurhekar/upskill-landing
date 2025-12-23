@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   FaCloud,
   FaChartBar,
@@ -11,12 +11,27 @@ import {
   FaUsers,
   FaLaptopCode,
 } from "react-icons/fa";
+import { getFeatures } from "@/sanity/lib/queries";
 
 export default function Features() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [features, setFeatures] = useState<any[]>([]);
 
-  const features = [
+  // Fetch features from Sanity
+  useEffect(() => {
+    async function loadFeatures() {
+      try {
+        const data = await getFeatures();
+        setFeatures(data);
+      } catch (error) {
+        console.error('Error loading features:', error);
+      }
+    }
+    loadFeatures();
+  }, []);
+
+  const fallbackFeatures = [
     {
       icon: FaUsers,
       title: "Personalized Career Mapping",
@@ -61,6 +76,9 @@ export default function Features() {
     },
   ];
 
+  // Use Sanity data if available, otherwise use fallback
+  const displayFeatures = features.length > 0 ? features : fallbackFeatures;
+
   return (
     <section id="features" className="py-20 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,11 +102,11 @@ export default function Features() {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
+          {displayFeatures.map((feature: any, index: number) => {
+            const Icon = feature.icon || FaCheckCircle;
             return (
               <motion.div
-                key={index}
+                key={feature._id || index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}

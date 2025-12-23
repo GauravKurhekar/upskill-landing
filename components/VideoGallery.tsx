@@ -1,9 +1,10 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import dynamic from "next/dynamic";
+import { getVideos } from "@/sanity/lib/queries";
 
 // Dynamic import to avoid SSR issues
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
@@ -15,9 +16,23 @@ export default function VideoGallery() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
   const [hoveredVideo, setHoveredVideo] = useState<number | null>(null);
+  const [videos, setVideos] = useState<any[]>([]);
+
+  // Fetch videos from Sanity
+  useEffect(() => {
+    async function loadVideos() {
+      try {
+        const data = await getVideos();
+        setVideos(data);
+      } catch (error) {
+        console.error('Error loading videos:', error);
+      }
+    }
+    loadVideos();
+  }, []);
 
   // Add your AWS video links here
-  const videos = [
+  const fallbackVideos = [
     {
       id: 1,
       title: "Introduction to Azure Data Engineering",
@@ -59,6 +74,9 @@ export default function VideoGallery() {
       description: "Real testimonials from our successful students",
     },
   ];
+
+  // Use Sanity data if available, otherwise use fallback
+  const displayVideos = videos.length > 0 ? videos : fallbackVideos;
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -138,21 +156,21 @@ export default function VideoGallery() {
                 msOverflowStyle: "none",
               }}
             >
-              {videos.map((video, index) => (
+              {displayVideos.map((video: any, index: number) => (
                 <motion.div
-                  key={video.id}
+                  key={video._id || video.id}
                   initial={{ opacity: 0, x: 50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex-shrink-0 w-[320px] md:w-[380px] group cursor-pointer"
                   onClick={() => openVideoModal(video.videoUrl)}
-                  onMouseEnter={() => setHoveredVideo(video.id)}
+                  onMouseEnter={() => setHoveredVideo(video._id || video.id)}
                   onMouseLeave={() => setHoveredVideo(null)}
                 >
                   <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-700/50">
                     {/* Video Preview or Thumbnail */}
                     <div className="relative aspect-video overflow-hidden">
-                      {hoveredVideo === video.id ? (
+                      {hoveredVideo === (video._id || video.id) ? (
                         // Auto-play preview on hover
                         <div className="relative w-full h-full">
                           <ReactPlayer
