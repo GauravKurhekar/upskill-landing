@@ -169,7 +169,7 @@ export default function BookingSection() {
             </motion.a>
 
             <p className="text-center text-xs text-gray-500 mt-4">
-              You'll receive a confirmation email with meeting details
+              You&apos;ll receive a confirmation email with meeting details
             </p>
           </motion.div>
 
@@ -182,7 +182,7 @@ export default function BookingSection() {
           >
             <div className="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                What You'll Get in This Call
+                What You&apos;ll Get in This Call
               </h3>
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
@@ -219,8 +219,8 @@ export default function BookingSection() {
                 </div>
               </div>
               <p className="text-white/90 italic leading-relaxed">
-                "This call gave me the clarity I needed. Gaurav's insights helped me
-                land my first Data Engineer role within 3 months!"
+                &ldquo;This call gave me the clarity I needed. Gaurav&apos;s insights helped me
+                land my first Data Engineer role within 3 months!&rdquo;
               </p>
               <div className="mt-4 text-blue-100 font-semibold">
                 - Priya S., Data Engineer

@@ -82,7 +82,7 @@ export default function CTA() {
             transition={{ delay: 0.6 }}
             className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-6 mb-8 max-w-3xl mx-auto shadow-md"
           >
-            <h3 className="text-xl font-bold text-gray-900 mb-4">What's Included</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">What&apos;s Included</h3>
             <div className="grid md:grid-cols-2 gap-3 text-left">
               {[
                 "Personalized Career Mapping",

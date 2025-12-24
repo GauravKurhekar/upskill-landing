@@ -86,7 +86,7 @@ export default function CourseContent() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            What's Included{" "}
+            What&apos;s Included{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               (Bonuses & Privileges)
             </span>
