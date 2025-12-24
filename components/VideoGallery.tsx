@@ -6,8 +6,11 @@ import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import dynamic from "next/dynamic";
 import { getVideos } from "@/sanity/lib/queries";
 
-// Dynamic import to avoid SSR issues
-const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+// Dynamic import to avoid SSR issues with proper typing
+const ReactPlayer = dynamic(() => import("react-player"), { 
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gray-200 animate-pulse rounded-xl" />
+}) as any;
 
 export default function VideoGallery() {
   const ref = useRef(null);
