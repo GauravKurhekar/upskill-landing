@@ -74,9 +74,9 @@ export default function Instructor() {
               </div>
 
               <p className="text-gray-700 text-lg leading-relaxed">
-                With over 9+ years of hands-on experience in the IT industry, I've worked across 
+                With over 9+ years of hands-on experience in the IT industry, I&apos;ve worked across 
                 real-time data projects, complex cloud systems, and enterprise-level pipelines — 
-                not just in theory, but in production. I've helped hundreds of aspiring professionals 
+                not just in theory, but in production. I&apos;ve helped hundreds of aspiring professionals 
                 transition confidently into Data Engineering careers through practical, job-focused 
                 training rooted in real-world use cases.
               </p>
@@ -101,9 +101,9 @@ export default function Instructor() {
 
               <div className="pt-4">
                 <blockquote className="italic text-gray-600 border-l-4 border-blue-600 pl-4">
-                  "I explain things in a way you can actually understand. My goal is to help 
+                  &ldquo;I explain things in a way you can actually understand. My goal is to help 
                   data enthusiasts turn ambition into achievement by offering a structured, 
-                  practical learning approach."
+                  practical learning approach.&rdquo;
                 </blockquote>
               </div>
             </div>

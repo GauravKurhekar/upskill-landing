@@ -96,7 +96,7 @@ export default function Features() {
             </span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            This isn't just a casual chat or generic consultation. Here's what sets it apart.
+            This isn&apos;t just a casual chat or generic consultation. Here&apos;s what sets it apart.
           </p>
         </motion.div>
 
