@@ -127,7 +127,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mb-8"
             >
-              <p className="text-sm text-gray-600 mb-3 font-medium">Technologies You'll Master:</p>
+              <p className="text-sm text-gray-600 mb-3 font-medium">Technologies You&apos;ll Master:</p>
               <div className="flex flex-wrap gap-4">
                 {techStack.map((tech, index) => (
                   <motion.div

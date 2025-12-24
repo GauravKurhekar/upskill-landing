@@ -118,7 +118,7 @@ export default function CourseRoadmap() {
             Do you dream of building powerful data pipelines and becoming a key player in any data-driven company?
           </p>
           <p className="text-xl font-semibold text-gray-900">
-            Upskill Academy's Azure Data Engineering course is your launchpad to a successful tech career.
+            Upskill Academy&apos;s Azure Data Engineering course is your launchpad to a successful tech career.
           </p>
         </motion.div>
 
@@ -139,12 +139,6 @@ export default function CourseRoadmap() {
           <div className="overflow-x-auto pb-8 hide-scrollbar">
             <div className="flex gap-8 w-max px-4">
               {roadmapSteps.map((step, index) => {
-                const xOffset = useTransform(
-                  scrollYProgress,
-                  [0, 0.5, 1],
-                  [index * 50, 0, -index * 50]
-                );
-
                 return (
                   <div key={index} className="relative">
                     <motion.div
@@ -156,7 +150,6 @@ export default function CourseRoadmap() {
                         type: "spring",
                         stiffness: 100,
                       }}
-                      style={{ x: xOffset }}
                       className="relative group w-[380px]"
                     >
                       {/* Card */}
@@ -228,7 +221,7 @@ export default function CourseRoadmap() {
           <div className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-3xl p-8 md:p-12 border-2 border-blue-100 shadow-xl">
             <div className="text-center mb-8">
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                What You'll Be Able To Do
+                What You&apos;ll Be Able To Do
               </h3>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
             </div>

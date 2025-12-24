@@ -95,7 +95,7 @@ export default function CourseFeatures({ course }: CourseFeaturesProps) {
                   className="text-center mb-12"
                 >
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-                    What You'll <span className="text-blue-600">Learn</span>
+                    What You&apos;ll <span className="text-blue-600">Learn</span>
                   </h2>
                   <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                     Master the essential skills to become a job-ready Azure Data Engineer
@@ -133,7 +133,7 @@ export default function CourseFeatures({ course }: CourseFeaturesProps) {
               {/* Left Side - What You'll Learn (50% width, stacked, bigger) */}
               <div className="w-1/2 flex flex-col justify-center">
                 <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                  What You'll <span className="text-blue-600">Learn</span>
+                  What You&apos;ll <span className="text-blue-600">Learn</span>
                 </h3>
                 <div className="space-y-3">
                   {features.map((feature, index) => (

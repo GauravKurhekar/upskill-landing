@@ -67,7 +67,7 @@ export default function CourseInstructor({ instructor }: CourseInstructorProps) 
                 <div className="space-y-6">
                   {/* Quote */}
                   <div className="relative">
-                    <div className="text-6xl text-blue-600 opacity-20 absolute -top-4 -left-2">"</div>
+                    <div className="text-6xl text-blue-600 opacity-20 absolute -top-4 -left-2">&ldquo;</div>
                     <p className="text-xl text-gray-700 italic relative z-10 pl-6">
                       I explain things in a way you can actually understand. My goal is to make
                       complex data engineering concepts simple and practical for everyone.
