@@ -32,8 +32,8 @@ export interface GraphyCourse {
 
 export async function fetchGraphyCourse(courseId: string): Promise<GraphyCourse | null> {
   try {
-    const mid = process.env.NEXT_PUBLIC_GRAPHY_MID;
-    const apiKey = process.env.NEXT_PUBLIC_GRAPHY_API_KEY;
+    const mid = process.env.GRAPHY_MID;
+    const apiKey = process.env.GRAPHY_API_KEY;
 
     if (!mid || !apiKey) {
       console.error('Graphy API credentials not found');

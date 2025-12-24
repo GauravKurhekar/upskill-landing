@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CoursePage() {
-  const courseId = process.env.NEXT_PUBLIC_COURSE_ID || "6870e4c48934024a7cb52be6";
+  const courseId = process.env.GRAPHY_COURSE_ID || "6870e4c48934024a7cb52be6";
   const courseData = await fetchGraphyCourse(courseId);
 
   // Fallback data if API fails
