@@ -110,7 +110,7 @@ export default function OnDemandPage() {
               </p>
 
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900">What's Included:</h3>
+                <h3 className="text-xl font-semibold text-gray-900">What&apos;s Included:</h3>
                 <ul className="space-y-3">
                   {features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-3">

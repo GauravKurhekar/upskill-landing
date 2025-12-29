@@ -84,7 +84,7 @@ export default function RTPPage() {
               Bridge the gap between courses and real jobs. Master real-world Data Engineering projects, ace your interviews, and land your dream position.
             </p>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto italic">
-              "If you already learned Data Engineering but don't have real project experience, RTP bridges the gap between courses and real jobs."
+              &quot;If you already learned Data Engineering but don&apos;t have real project experience, RTP bridges the gap between courses and real jobs.&quot;
             </p>
           </motion.div>
         </div>
