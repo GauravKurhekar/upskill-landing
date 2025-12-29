@@ -63,7 +63,7 @@ export default function FAQ() {
     {
       question: "What makes this different from other mentorship programs?",
       answer:
-        "Unlike generic coaching programs, this is based on real-world experience from a working Senior Data Engineer with 9+ years in production environments. You get honest feedback, practical insights, and strategies that actually work—not just theory from YouTube.",
+        "Unlike generic coaching programs, this is based on real-world experience from a working Senior Data Engineer with 10+ years in production environments. You get honest feedback, practical insights, and strategies that actually work—not just theory from YouTube.",
     },
   ];
 

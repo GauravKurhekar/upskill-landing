@@ -7,6 +7,7 @@ import CourseInstructor from "@/components/course/CourseInstructor";
 import CourseCTA from "@/components/course/CourseCTA";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TopNotificationBar from "@/components/TopNotificationBar";
 import { fetchGraphyCourse } from "@/lib/graphy";
 
 export const metadata: Metadata = {
@@ -81,6 +82,7 @@ export default async function CoursePage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <TopNotificationBar />
       <Navbar />
       <CourseHero course={course} />
       <CourseRoadmapInteractive />

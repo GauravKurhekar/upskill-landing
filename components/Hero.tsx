@@ -91,7 +91,7 @@ export default function Hero() {
             className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
             {heroData?.subheadline || 
-              "Get personalized direction from a Microsoft & Databricks Certified Senior Data Engineer with 9+ years of experience solving real-world data problems."
+              "Get personalized direction from a Microsoft & Databricks Certified Senior Data Engineer with 10+ years of experience solving real-world data problems."
             }
           </motion.p>
 
@@ -125,8 +125,8 @@ export default function Hero() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-4xl mx-auto"
           >
             {[
-              { number: "9+ Years", label: "Industry Experience" },
-              { number: "100+", label: "Professionals Mentored" },
+              { number: "10+ Years", label: "Industry Experience" },
+              { number: "1000+", label: "Professionals Mentored" },
               { number: "Real-World", label: "Project Scenarios" },
               { number: "1:1", label: "Personalized Guidance" },
             ].map((stat, index) => (
