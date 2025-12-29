@@ -16,10 +16,10 @@ export default function ContactCTA() {
         >
           {/* Heading */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-orange-500 mb-6">
-            Have Any Questions? Let's Start to Talk
+            Have Any Questions? Let&apos;s Start to Talk
           </h2>
           <p className="text-gray-900 text-lg md:text-xl max-w-3xl mx-auto mb-10">
-            Let's start a conversation. Tell a bit about yourself and send your inquiry to us via WhatsApp/SMS or Call. We'll get back to you as soon as possible.
+            Let&apos;s start a conversation. Tell a bit about yourself and send your inquiry to us via WhatsApp/SMS or Call. We&apos;ll get back to you as soon as possible.
           </p>
 
           {/* CTA Buttons */}

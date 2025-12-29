@@ -35,9 +35,11 @@ export default function Roadmap() {
           className="relative"
         >
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <img
+            <Image
               src="https://ik.imagekit.io/qujrbo6v2/roadmap_high_resolution.png"
               alt="Learning Roadmap"
+              width={1200}
+              height={600}
               className="w-full h-auto"
             />
           </div>
@@ -52,7 +54,7 @@ export default function Roadmap() {
           className="mt-12 text-center"
         >
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-            Progress through our carefully designed curriculum covering all essential Azure Data Engineering tools and technologies. From foundational concepts to advanced implementations, you'll master every tool you need for real-world success.
+            Progress through our carefully designed curriculum covering all essential Azure Data Engineering tools and technologies. From foundational concepts to advanced implementations, you&apos;ll master every tool you need for real-world success.
           </p>
         </motion.div>
       </div>

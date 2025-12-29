@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function TechStackScroll() {
   const technologies = [
@@ -31,7 +32,7 @@ export default function TechStackScroll() {
           viewport={{ once: true }}
           className="text-3xl font-bold text-gray-900 text-center"
         >
-          Tools You'll Master
+          Tools You&apos;ll Master
         </motion.h2>
         <p className="text-center text-gray-600 mt-2">
           Learn industry-leading technologies used by top data engineers
@@ -60,10 +61,12 @@ export default function TechStackScroll() {
                 className="flex-shrink-0 w-40 h-40 flex items-center justify-center bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 group cursor-pointer"
                 whileHover={{ scale: 1.05, y: -10 }}
               >
-                <div className="flex flex-col items-center justify-center h-full p-4 text-center">
-                  <img
+              <div className="flex flex-col items-center justify-center h-full p-4 text-center">
+                  <Image
                     src={tech.url}
                     alt={tech.name}
+                    width={80}
+                    height={80}
                     className="h-20 w-auto object-contain mb-3 group-hover:scale-110 transition-transform duration-300"
                   />
                   <p className="text-sm font-medium text-gray-700 line-clamp-2 group-hover:text-blue-600">
