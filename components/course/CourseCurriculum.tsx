@@ -207,6 +207,28 @@ export default function CourseCurriculum({ modules }: CourseCurriculumProps) {
         { id: "recorded-1-10", title: "Aggregate functions", type: "video" },
         { id: "recorded-1-11", title: "CTE (Common table expression)", type: "video" },
       ]
+    },
+    {
+      id: "recorded-2",
+      title: "Microsoft Fabric",
+      order: 2,
+      lessons: [
+        { id: "recorded-2-1", title: "Create workspace in fabric", type: "video" },
+        { id: "recorded-2-2", title: "How to Create a Lakehouse in Microsoft Fabric", type: "video" },
+        { id: "recorded-2-3", title: "OneLake File Explorer in Microsoft Fabric", type: "video" },
+        { id: "recorded-2-4", title: "Lakehouse Essentials", type: "video" },
+        { id: "recorded-2-5", title: "Spark Notebooks and Data Factory in MS Fabric", type: "video" },
+      ]
+    },
+    {
+      id: "recorded-3",
+      title: "Real time Industry level projects of azure data engineering",
+      order: 3,
+      lessons: [
+        { id: "recorded-3-1", title: "Project 1 – End-To-End Azure Data Engineering pipeline (batch processing)", type: "video" },
+        { id: "recorded-3-2", title: "Project 2 – Enterprise data processing using databricks workflows", type: "video" },
+        { id: "recorded-3-3", title: "Project 3 – Production-grade CI/CD for Data Engineering using Azure Devops", type: "video" },
+      ]
     }
   ];
 
