@@ -74,7 +74,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-20 bg-gradient-to-br from-purple-50 to-blue-50"
+      className="py-12 bg-gradient-to-br from-purple-50 to-blue-50"
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -78,7 +78,7 @@ export default function PricingPlans() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white" id="pricing">
+    <section className="py-12 bg-gradient-to-b from-gray-50 to-white" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

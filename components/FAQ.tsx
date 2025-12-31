@@ -61,7 +61,7 @@ export default function FAQ() {
   const displayFaqs = faqs.length > 0 ? faqs : fallbackFaqs;
 
   return (
-    <section id="faq" className="py-20 bg-white" ref={ref}>
+    <section id="faq" className="py-12 bg-white" ref={ref}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

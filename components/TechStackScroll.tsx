@@ -21,7 +21,7 @@ export default function TechStackScroll() {
   const duplicatedTechs = [...technologies, ...technologies];
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-12 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
