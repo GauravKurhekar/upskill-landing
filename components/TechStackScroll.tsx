@@ -11,8 +11,6 @@ export default function TechStackScroll() {
     { name: "Databricks", url: "https://ik.imagekit.io/qujrbo6v2/databricks.png" },
     { name: "Azure DevOps", url: "https://ik.imagekit.io/qujrbo6v2/azure-devops.png" },
     { name: "PySpark", url: "https://ik.imagekit.io/qujrbo6v2/pyspark.png" },
-    { name: "Recordings", url: "https://ik.imagekit.io/qujrbo6v2/recording.png" },
-    { name: "CSV", url: "https://ik.imagekit.io/qujrbo6v2/csv.png" },
     { name: "Agile", url: "https://ik.imagekit.io/qujrbo6v2/agile.png" },
     { name: "Python", url: "https://ik.imagekit.io/qujrbo6v2/python_logo.png" },
     { name: "Fabric", url: "https://ik.imagekit.io/qujrbo6v2/Fabric_logo.webp" },
@@ -30,27 +28,27 @@ export default function TechStackScroll() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-gray-900 text-center"
+          className="text-4xl md:text-5xl font-bold text-gray-900 text-center"
         >
-          Tools You&apos;ll Master
+          Tools You will Master
         </motion.h2>
         <p className="text-center text-gray-600 mt-2">
           Learn industry-leading technologies used by top data engineers
         </p>
       </div>
 
-      <div className="relative">
+      <div className="relative px-40">
         {/* Gradient overlays for fade effect on sides */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
         {/* Scrolling container */}
         <div className="flex overflow-hidden">
           <motion.div
-            className="flex gap-8 py-8"
-            animate={{ x: [-1500, 0] }}
+            className="flex gap-6 py-8"
+            animate={{ x: [-1200, 0] }}
             transition={{
-              duration: 25,
+              duration: 30,
               ease: "linear",
               repeat: Infinity,
             }}
@@ -58,7 +56,7 @@ export default function TechStackScroll() {
             {duplicatedTechs.map((tech, index) => (
               <motion.div
                 key={index}
-                className="flex-shrink-0 w-40 h-40 flex items-center justify-center bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 group cursor-pointer"
+                className="flex-shrink-0 w-32 h-32 flex items-center justify-center bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 group cursor-pointer"
                 whileHover={{ scale: 1.05, y: -10 }}
               >
               <div className="flex flex-col items-center justify-center h-full p-4 text-center">

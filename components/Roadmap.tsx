@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Roadmap() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -13,7 +13,7 @@ export default function Roadmap() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Your Learning{" "}
@@ -34,9 +34,9 @@ export default function Roadmap() {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-white rounded-2xl overflow-hidden">
             <Image
-              src="https://ik.imagekit.io/qujrbo6v2/roadmap_high_resolution.png"
+              src="https://ik.imagekit.io/qujrbo6v2/roadmap_high_resolution.png?updatedAt=1766997017916"
               alt="Learning Roadmap"
               width={1200}
               height={600}
@@ -51,7 +51,7 @@ export default function Roadmap() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-2 text-center"
         >
           <p className="text-gray-600 max-w-3xl mx-auto text-lg">
             Progress through our carefully designed curriculum covering all essential Azure Data Engineering tools and technologies. From foundational concepts to advanced implementations, you&apos;ll master every tool you need for real-world success.
