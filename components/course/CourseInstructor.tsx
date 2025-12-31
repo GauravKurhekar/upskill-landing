@@ -57,8 +57,8 @@ export default function CourseInstructor({ instructor }: CourseInstructorProps) 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-6 left-6">
-                  <h3 className="text-3xl font-bold text-white mb-2">{instructor.name}</h3>
-                  <p className="text-blue-200 text-lg">Senior Data Engineer</p>
+                  <h3 className="text-3xl font-bold text-white mb-2">Gaurav</h3>
+                  <p className="text-blue-200 text-lg">Lead Data Engineer</p>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@ export default function CourseInstructor({ instructor }: CourseInstructorProps) 
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
                         <FaStar className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-1" />
-                        <span className="text-gray-700">9+ years in Data Engineering</span>
+                        <span className="text-gray-700">10+ years in Data Engineering</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <FaCertificate className="w-5 h-5 text-blue-600 flex-shrink-0 mt-1" />
@@ -108,7 +108,7 @@ export default function CourseInstructor({ instructor }: CourseInstructorProps) 
                         Databricks Expert
                       </span>
                       <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
-                        Industry Veteran
+                        Real time Industry Expert
                       </span>
                     </div>
                   </div>

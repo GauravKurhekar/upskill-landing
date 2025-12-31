@@ -34,7 +34,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
   ];
 
   return (
-    <section ref={ref} className="relative pt-32 pb-20 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden min-h-screen flex items-center">
+    <section ref={ref} className="relative pt-8 pb-20 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden min-h-screen flex items-center">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-20">
         <motion.div 

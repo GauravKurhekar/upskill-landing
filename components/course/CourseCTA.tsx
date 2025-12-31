@@ -18,7 +18,6 @@ export default function CourseCTA({ course }: CourseCTAProps) {
     { icon: FaInfinity, text: "Lifetime Access" },
     { icon: FaClock, text: "Learn at Your Pace" },
     { icon: FaUsers, text: "Community Support" },
-    { icon: FaCheckCircle, text: "Certificate of Completion" },
   ];
 
   return (
@@ -51,7 +50,7 @@ export default function CourseCTA({ course }: CourseCTAProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-3xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto"
           >
             {benefits.map((benefit, index) => (
               <motion.div
@@ -92,10 +91,6 @@ export default function CourseCTA({ course }: CourseCTAProps) {
             transition={{ delay: 0.8 }}
             className="flex flex-wrap justify-center items-center gap-4 text-blue-100 text-sm"
           >
-            <div className="flex items-center gap-2">
-              <FaCheckCircle className="text-green-300" />
-              <span>30-day guarantee</span>
-            </div>
             <div className="flex items-center gap-2">
               <FaCheckCircle className="text-green-300" />
               <span>Secure checkout</span>

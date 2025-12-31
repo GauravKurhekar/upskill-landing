@@ -26,44 +26,34 @@ export default function FAQ() {
 
   const fallbackFaqs = [
     {
-      question: "Who is this session for?",
+      question: "Who Should Enroll in This Program?",
       answer:
-        "This session is ideal for students, freshers, IT professionals (developers, testers, support engineers), data analysts, and job seekers who are serious about transitioning into Data Engineering and want expert, personalized guidance on their next steps.",
+        "This program is ideal for working professionals from both Tech and Non-Tech backgrounds. It is also suitable for graduates and professionals from other domains who are willing to put in extra effort to transition into the field of Data Engineering.",
     },
     {
-      question: "What will I learn during the session?",
+      question: "What if I miss a Live lecture?",
       answer:
-        "You'll get a personalized career roadmap based on your current skills and goals, deep insights from 9+ years of real-world experience, clarity on which tools and skills to focus on, and actionable next steps to become job-ready.",
+        "All live lectures are recorded and you will have access to the recordings after the lecture is completed.",
     },
     {
-      question: "Do I need any prior experience to attend?",
+      question: "What is the Duration of the Program?",
       answer:
-        "No specific prerequisites are required. Whether you're a complete beginner or have some technical background, the session will be tailored to your current level and career aspirations.",
+        "The program spans approximately 2.5 to 3 months, depending on the learning pace and class schedule.",
     },
     {
-      question: "Is this a promotional or sales call?",
+      question: "What is profiles of instructor?",
       answer:
-        "No. This is a genuine consultation where you'll receive honest feedback and direction—even if you choose not to work with us further. The focus is on providing value and clarity, not pushing any agenda.",
+        "Our instructor is currently working as a Senior Data Engineer in a product-based company. He holds industry-recognized certifications from Microsoft and Databricks, bringing real-world experience and practical insights to the classroom.",
     },
     {
-      question: "How long is the session?",
+      question: "Is the entire course taught by one instructor?",
       answer:
-        "The session is 1.5 hours long, conducted via Zoho Meeting. This gives us enough time to understand your background, discuss your goals, and create a clear action plan.",
+        "Yes, the entire course is designed and delivered by Gaurav K himself. He believes in maintaining the highest quality of coaching and a consistent learning experience.",
     },
     {
-      question: "How should I prepare for the call?",
+      question: "Will I be industry-ready after completing the course?",
       answer:
-        "Come prepared with specific questions about your career goals, any challenges you're facing, and what you hope to achieve in Data Engineering. The more context you provide, the more personalized and valuable the guidance will be.",
-    },
-    {
-      question: "What bonuses do I get?",
-      answer:
-        "You'll receive Interview Prep Kit with real Q&As, Databricks Notebooks for SQL/PySpark practice, Lifetime Access to session recordings, 1:1 Resume & Job Strategy guidance, and Use-Case Assignments based on real industry scenarios.",
-    },
-    {
-      question: "What makes this different from other mentorship programs?",
-      answer:
-        "Unlike generic coaching programs, this is based on real-world experience from a working Senior Data Engineer with 10+ years in production environments. You get honest feedback, practical insights, and strategies that actually work—not just theory from YouTube.",
+        "Absolutely. You'll gain in-depth training on the latest and most in-demand technologies in the Big Data industry. Our hands-on approach ensures you build the skills and confidence to handle real-world scenarios.",
     },
   ];
 
