@@ -1,10 +1,8 @@
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
 import WhatSetsUsApart from "@/components/WhatSetsUsApart";
 import Roadmap from "@/components/Roadmap";
 import TechStackScroll from "@/components/TechStackScroll";
 import PricingPlans from "@/components/PricingPlans";
-import CourseContent from "@/components/CourseContent";
 import Testimonials from "@/components/Testimonials";
 import Instructor from "@/components/Instructor";
 import VideoGallery from "@/components/VideoGallery";
@@ -25,12 +23,10 @@ export default function Home() {
       <Roadmap />
       <TechStackScroll />
       <PricingPlans />
-      <Features />
-      <CourseContent />
+      <Testimonials />
       <Instructor />
       <VideoGallery />
       <ContactCTA />
-      <Testimonials />
       <FAQ />
       <CTA />
       <Footer />
