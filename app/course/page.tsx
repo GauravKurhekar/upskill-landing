@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import CourseHero from "@/components/course/CourseHero";
-import CourseRoadmapInteractive from "@/components/course/CourseRoadmapInteractive";
+import Roadmap from "@/components/Roadmap";
 import CourseCurriculum from "@/components/course/CourseCurriculum";
 import CourseFeatures from "@/components/course/CourseFeatures";
 import CourseInstructor from "@/components/course/CourseInstructor";
@@ -85,7 +85,7 @@ export default async function CoursePage() {
       <TopNotificationBar />
       <Navbar />
       <CourseHero course={course} />
-      <CourseRoadmapInteractive />
+      <Roadmap />
       <CourseFeatures course={course} />
       <CourseCurriculum modules={course.modules} />
       <CourseInstructor instructor={course.instructor} />
