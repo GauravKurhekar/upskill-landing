@@ -45,24 +45,7 @@ export default function CourseInstructor({ instructor }: CourseInstructorProps) 
         >
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              {/* Left - Image */}
-              <div className="relative h-96 lg:h-full">
-                <img
-                  src={instructor.image}
-                  alt={instructor.name}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://via.placeholder.com/400x500?text=Instructor";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <div className="absolute bottom-6 left-6">
-                  <h3 className="text-3xl font-bold text-white mb-2">Gaurav</h3>
-                  <p className="text-blue-200 text-lg">Lead Data Engineer</p>
-                </div>
-              </div>
-
-              {/* Right - Content */}
+              {/* Left - Content */}
               <div className="p-8 lg:p-12">
                 <div className="space-y-6">
                   {/* Quote */}
@@ -126,6 +109,18 @@ export default function CourseInstructor({ instructor }: CourseInstructorProps) 
                     </a>
                   </div>
                 </div>
+              </div>
+
+              {/* Right - Image */}
+              <div className="relative h-96 lg:h-full rounded-2xl overflow-hidden border-b-4 border-blue-600 shadow-2xl">
+                <img
+                  src="https://ik.imagekit.io/qujrbo6v2/Untitled%20(1).png"
+                  alt={instructor.name}
+                  className="w-full h-full object-cover scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://via.placeholder.com/400x500?text=Instructor";
+                  }}
+                />
               </div>
             </div>
           </div>
