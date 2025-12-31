@@ -8,8 +8,8 @@ export default function PricingPlans() {
     {
       name: "On-Demand Recorded Sessions",
       badge: "SELF-PACED",
-      originalPrice: "XX,XXX",
-      price: "XX,XXX",
+      originalPrice: "12,990",
+      price: "8,990",
       popular: false,
       features: [
         { text: "Comprehensive Curriculum Coverage", included: true },
@@ -33,8 +33,8 @@ export default function PricingPlans() {
     {
       name: "Instructor-Led Live Sessions",
       badge: "MOST POPULAR",
-      originalPrice: "XX,XXX",
-      price: "XX,XXX",
+      originalPrice: "34,990",
+      price: "25,990",
       popular: true,
       features: [
         { text: "Comprehensive Curriculum Coverage", included: true },
@@ -61,8 +61,8 @@ export default function PricingPlans() {
     {
       name: "RTP – Real-Time Project Accelerator",
       badge: "PROJECT FOCUSED",
-      originalPrice: "XX,XXX",
-      price: "XX,XXX",
+      originalPrice: "4,990",
+      price: "2,990",
       popular: false,
       features: [
         { text: "3 End-to-End Industry-Grade Projects", included: true },

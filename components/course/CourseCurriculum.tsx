@@ -95,6 +95,96 @@ export default function CourseCurriculum({ modules }: CourseCurriculumProps) {
         { id: "live-4-7", title: "MapReduce", type: "live" },
         { id: "live-4-8", title: "Hadoop Ecosystem Components", type: "live" },
       ]
+    },
+    {
+      id: "live-5",
+      title: "Spark",
+      order: 5,
+      lessons: [
+        { id: "live-5-1", title: "What is Spark", type: "live" },
+        { id: "live-5-2", title: "What is pyspark", type: "live" },
+        { id: "live-5-3", title: "Spark Architecture & Internals", type: "live" },
+        { id: "live-5-4", title: "Spark RDD", type: "live" },
+        { id: "live-5-5", title: "Spark DataFrame and datasets", type: "live" },
+      ]
+    },
+    {
+      id: "live-6",
+      title: "Databricks",
+      order: 6,
+      lessons: [
+        { id: "live-6-1", title: "Databricks Architecture", type: "live" },
+        { id: "live-6-2", title: "Working with Databricks Filesystem – DBFS", type: "live" },
+        { id: "live-6-3", title: "Dataframe and RDD's", type: "live" },
+        { id: "live-6-4", title: "Data Frame Transformation", type: "live" },
+        { id: "live-6-5", title: "Spark SQL in Databricks", type: "live" },
+        { id: "live-6-6", title: "Mounting Storage in Databricks", type: "live" },
+        { id: "live-6-7", title: "Databricks Utilities and Widgets", type: "live" },
+        { id: "live-6-8", title: "Cluster Management", type: "live" },
+        { id: "live-6-9", title: "Optimization and Performance Tuning", type: "live" },
+        { id: "live-6-10", title: "Spark Performance & Memory Management", type: "live" },
+        { id: "live-6-11", title: "Delta Lake & Data Lakehouse", type: "live" },
+        { id: "live-6-12", title: "Spark Streaming", type: "live" },
+        { id: "live-6-13", title: "Unity Catalog in Databricks", type: "live" },
+        { id: "live-6-14", title: "Databricks Workflows", type: "live" },
+        { id: "live-6-15", title: "Notebook Integration & Connectivity", type: "live" },
+      ]
+    },
+    {
+      id: "live-7",
+      title: "Azure Data Factory",
+      order: 7,
+      lessons: [
+        { id: "live-7-1", title: "What is Azure Data Factory?", type: "live" },
+        { id: "live-7-2", title: "Use case of Azure Data Factory", type: "live" },
+        { id: "live-7-3", title: "Creating an Azure Data Factory Workspace", type: "live" },
+        { id: "live-7-4", title: "Data Factory Components", type: "live" },
+        { id: "live-7-5", title: "Creating Pipeline in Azure Data Factory", type: "live" },
+        { id: "live-7-6", title: "Data flows and Triggers in ADF", type: "live" },
+        { id: "live-7-7", title: "Monitoring and optimization in ADF", type: "live" },
+        { id: "live-7-8", title: "DevOps In ADF", type: "live" },
+      ]
+    },
+    {
+      id: "live-8",
+      title: "Synapse Analytics and Data Warehousing",
+      order: 8,
+      lessons: [
+        { id: "live-8-1", title: "What is Data Warehouse", type: "live" },
+        { id: "live-8-2", title: "OLTP VS OLAP", type: "live" },
+        { id: "live-8-3", title: "Extract, Transform, Loading (ETL)", type: "live" },
+        { id: "live-8-4", title: "Extract, Load, Transform(ELT)", type: "live" },
+        { id: "live-8-5", title: "Data Lake VS Data Warehouse", type: "live" },
+        { id: "live-8-6", title: "Star & Snowflake Schema", type: "live" },
+        { id: "live-8-7", title: "Fact and Dimension Table", type: "live" },
+        { id: "live-8-8", title: "Data Marts", type: "live" },
+        { id: "live-8-9", title: "Slowly changing dimensions(SCD)", type: "live" },
+        { id: "live-8-10", title: "Understanding dimensional modeling", type: "live" },
+      ]
+    },
+    {
+      id: "live-9",
+      title: "Agile Methodology",
+      order: 9,
+      lessons: [
+        { id: "live-9-1", title: "What is Agile Methodology?", type: "live" },
+        { id: "live-9-2", title: "Why Agile is Important in Modern Data Projects", type: "live" },
+        { id: "live-9-3", title: "Early Software Development Models: Waterfall Approach", type: "live" },
+        { id: "live-9-4", title: "Limitations of Waterfall in Data Projects", type: "live" },
+        { id: "live-9-5", title: "Agile Events and meetings", type: "live" },
+      ]
+    },
+    {
+      id: "live-10",
+      title: "Introduction to JIRA",
+      order: 10,
+      lessons: [
+        { id: "live-10-1", title: "What is JIRA?", type: "live" },
+        { id: "live-10-2", title: "Basic JIRA Concepts", type: "live" },
+        { id: "live-10-3", title: "JIRA Workflow Stages", type: "live" },
+        { id: "live-10-4", title: "Sprint Board Overview", type: "live" },
+        { id: "live-10-5", title: "Using JIRA for Data Engineering", type: "live" },
+      ]
     }
   ];
 

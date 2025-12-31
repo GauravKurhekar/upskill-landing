@@ -60,17 +60,17 @@ export default function CTA() {
           >
             <div className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl p-5 shadow-md">
               <FaClock className="w-6 h-6 text-blue-600 mb-2 mx-auto" />
-              <div className="text-gray-900 font-semibold text-base">1.5 Hours</div>
+              <div className="text-gray-900 font-semibold text-base">30 Minutes</div>
               <div className="text-gray-600 text-sm">Duration</div>
             </div>
             <div className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl p-5 shadow-md">
               <FaVideo className="w-6 h-6 text-blue-600 mb-2 mx-auto" />
-              <div className="text-gray-900 font-semibold text-base">Zoho Meeting</div>
+              <div className="text-gray-900 font-semibold text-base">Google Meet</div>
               <div className="text-gray-600 text-sm">Platform</div>
             </div>
             <div className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl p-5 shadow-md">
               <FaCalendarAlt className="w-6 h-6 text-blue-600 mb-2 mx-auto" />
-              <div className="text-gray-900 font-semibold text-base">10 AM - 6 PM</div>
+              <div className="text-gray-900 font-semibold text-base">1 AM - 9 PM</div>
               <div className="text-gray-600 text-sm">Available Slots (IST)</div>
             </div>
           </motion.div>
@@ -114,7 +114,7 @@ export default function CTA() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <a
-              href="https://tidycal.com/growdigitally113/30-minute-meeting"
+              href="https://tidycal.com/upskillacademy/30-minute-meeting"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-3"

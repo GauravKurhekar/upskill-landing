@@ -133,8 +133,8 @@ export default function OnDemandPage() {
               <div className="text-center">
                 <p className="text-gray-600 mb-4">Price</p>
                 <div className="flex items-baseline justify-center gap-2 mb-6">
-                  <span className="text-2xl text-gray-400 line-through">₹XX,XXX</span>
-                  <span className="text-5xl font-bold text-gray-900">₹XX,XXX</span>
+                  <span className="text-2xl text-gray-400 line-through">₹12,990</span>
+                  <span className="text-5xl font-bold text-gray-900">₹8,990</span>
                   <span className="text-gray-500">/-</span>
                 </div>
 

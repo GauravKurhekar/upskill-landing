@@ -1,75 +1,56 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import { FaStar, FaQuoteLeft } from "react-icons/fa";
-import { getTestimonials } from "@/sanity/lib/queries";
+import { useRef } from "react";
+import { FaStar } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Testimonials() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [testimonials, setTestimonials] = useState<any[]>([]);
 
-  // Fetch testimonials from Sanity
-  useEffect(() => {
-    async function loadTestimonials() {
-      try {
-        const data = await getTestimonials();
-        setTestimonials(data);
-      } catch (error) {
-        console.error('Error loading testimonials:', error);
-      }
-    }
-    loadTestimonials();
-  }, []);
-
-  const fallbackTestimonials = [
+  const screenshots = [
     {
-      name: "Priya Sharma",
-      role: "Data Engineer at Microsoft",
-      image: "👩‍💼",
-      rating: 5,
-      text: "This course completely transformed my career! The hands-on projects and real-world scenarios prepared me perfectly for my role at Microsoft. Highly recommended!",
+      id: 1,
+      url: "https://ik.imagekit.io/qujrbo6v2/IMG-20250810-WA0006.jpg",
+      alt: "Student Success Story 1",
     },
     {
-      name: "Rahul Verma",
-      role: "Senior Data Analyst at Amazon",
-      image: "👨‍💻",
-      rating: 5,
-      text: "The best Azure course I've taken. The instructor's expertise and the comprehensive curriculum helped me transition from analyst to data engineer seamlessly.",
+      id: 2,
+      url: "https://ik.imagekit.io/qujrbo6v2/IMG-20250810-WA0003.jpg",
+      alt: "Student Success Story 2",
     },
     {
-      name: "Anita Desai",
-      role: "Cloud Engineer at TCS",
-      image: "👩‍🔬",
-      rating: 5,
-      text: "Excellent course structure and support. The career guidance and certification prep were invaluable. Got my dream job within 3 months of completing the course!",
+      id: 3,
+      url: "https://ik.imagekit.io/qujrbo6v2/IMG-20250810-WA0011.jpg",
+      alt: "Student Success Story 3",
     },
     {
-      name: "Vikram Singh",
-      role: "Data Architect at Infosys",
-      image: "👨‍🎓",
-      rating: 5,
-      text: "The depth of knowledge and practical experience shared in this course is unmatched. It's not just about passing certifications, but truly understanding Azure.",
+      id: 4,
+      url: "https://ik.imagekit.io/qujrbo6v2/IMG-20250810-WA0008.jpg",
+      alt: "Student Success Story 4",
     },
     {
-      name: "Meera Patel",
-      role: "BI Developer at Wipro",
-      image: "👩‍🏫",
-      rating: 5,
-      text: "From basics to advanced concepts, everything was explained clearly. The projects helped me build a strong portfolio that impressed interviewers.",
+      id: 5,
+      url: "https://ik.imagekit.io/qujrbo6v2/IMG-20250810-WA0009.jpg",
+      alt: "Student Success Story 5",
     },
     {
-      name: "Arjun Reddy",
-      role: "Data Engineer at Google",
-      image: "👨‍🔧",
-      rating: 5,
-      text: "Worth every penny! The instructor's industry experience shows in every lesson. The community support and mentorship made learning enjoyable and effective.",
+      id: 6,
+      url: "https://ik.imagekit.io/qujrbo6v2/IMG-20250810-WA0010.jpg",
+      alt: "Student Success Story 6",
+    },
+    {
+      id: 7,
+      url: "https://ik.imagekit.io/qujrbo6v2/IMG-20250810-WA0007.jpg",
+      alt: "Student Success Story 7",
+    },
+    {
+      id: 8,
+      url: "https://ik.imagekit.io/qujrbo6v2/IMG-20250810-WA0002.jpg",
+      alt: "Student Success Story 8",
     },
   ];
-
-  // Use Sanity data if available, otherwise use fallback
-  const displayTestimonials = testimonials.length > 0 ? testimonials : fallbackTestimonials;
 
   return (
     <section
@@ -96,41 +77,26 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayTestimonials.map((testimonial: any, index: number) => (
+        {/* Screenshots Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {screenshots.map((screenshot, index) => (
             <motion.div
-              key={testimonial._id || index}
+              key={screenshot.id}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 relative"
+              className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-blue-100">
-                <FaQuoteLeft className="w-8 h-8" />
-              </div>
-
-              {/* Profile */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="text-4xl">{testimonial.image}</div>
-                <div>
-                  <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                </div>
-              </div>
-
-              {/* Rating */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <FaStar key={i} className="w-5 h-5 text-yellow-400" />
-                ))}
-              </div>
-
-              {/* Testimonial Text */}
-              <p className="text-gray-700 leading-relaxed">
-                {testimonial.testimonial || testimonial.text}
-              </p>
+              <Image
+                src={screenshot.url}
+                alt={screenshot.alt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                quality={85}
+              />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
             </motion.div>
           ))}
         </div>

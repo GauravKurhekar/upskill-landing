@@ -186,10 +186,10 @@ export default function CourseHero({ course }: CourseHeroProps) {
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <FaClock className="w-5 h-5 text-blue-600" />
-                  <span className="text-2xl font-bold text-gray-900">{course.duration || "40"}+</span>
+                  <FaGlobe className="w-5 h-5 text-blue-600" />
+                  <span className="text-2xl font-bold text-gray-900">Online</span>
                 </div>
-                <div className="text-gray-600 text-sm">Hours</div>
+                <div className="text-gray-600 text-sm">Mode</div>
               </motion.div>
               <motion.div 
                 className="text-center"
@@ -319,7 +319,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
                     <div>
                       <div className="text-sm text-gray-500">Course Price</div>
                       <div className="text-3xl font-bold text-gray-900">
-                        {course.price > 0 ? `₹${course.price}` : "Free"}
+                        ₹25,990
                       </div>
                     </div>
                     <motion.a
