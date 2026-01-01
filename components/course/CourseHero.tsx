@@ -321,7 +321,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
                     <div>
                       <div className="text-sm text-gray-500">Course Price</div>
                       <div className="text-3xl font-bold text-gray-900">
-                        ₹25,990
+                        ₹24,990
                       </div>
                     </div>
                     <motion.a

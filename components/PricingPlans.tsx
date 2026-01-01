@@ -34,7 +34,7 @@ export default function PricingPlans() {
       name: "Instructor-Led Live Sessions",
       badge: "MOST POPULAR",
       originalPrice: "34,990",
-      price: "25,990",
+      price: "24,990",
       popular: true,
       features: [
         { text: "Comprehensive Curriculum Coverage", included: true },
@@ -62,7 +62,7 @@ export default function PricingPlans() {
       name: "RTP – Real-Time Project Accelerator",
       badge: "PROJECT FOCUSED",
       originalPrice: "4,990",
-      price: "2,990",
+      price: "1,990",
       popular: false,
       features: [
         { text: "3 End-to-End Industry-Grade Projects", included: true },
