@@ -118,7 +118,7 @@ export default function Hero() {
               Meet Your Mentor
             </a>
             <a
-              href="https://docs.google.com/presentation/d/17kXcn91An1PYspDeYrKbtGdnTG0dTlQ2/export?format=pdf"
+              href="https://drive.google.com/file/d/1kR9AgEYu6oHssxyw4c44Av_Tfxn8-bCm/view?usp=drive_link"
               download
               target="_blank"
               rel="noopener noreferrer"
