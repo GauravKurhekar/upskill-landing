@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaChevronRight, FaPlayCircle, FaFileAlt } from "react-icons/fa";
 
 interface Module {
@@ -240,10 +240,12 @@ export default function CourseCurriculum({ modules }: CourseCurriculumProps) {
 
   const currentModule = allModules.find(m => m.id === selectedModule) || allModules[0];
 
-  // Set default selected module on mount
-  if (!selectedModule && allModules.length > 0) {
-    setSelectedModule(allModules[0].id);
-  }
+  // Set default selected module on mount using useEffect
+  useEffect(() => {
+    if (!selectedModule && allModules.length > 0) {
+      setSelectedModule(allModules[0].id);
+    }
+  }, []);
 
   return (
     <section id="curriculum" ref={ref} className="py-16 bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50">
