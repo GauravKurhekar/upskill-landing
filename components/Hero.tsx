@@ -118,8 +118,8 @@ export default function Hero() {
               Meet Your Mentor
             </a>
             <a
-              href="https://drive.google.com/file/d/1kR9AgEYu6oHssxyw4c44Av_Tfxn8-bCm/view?usp=drive_link"
-              download
+              href="https://drive.google.com/uc?export=download&id=1kR9AgEYu6oHssxyw4c44Av_Tfxn8-bCm"
+              download="UpSkill-Academy-Curriculum.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-300 hover:border-blue-600"
