@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import WhatSetsUsApart from "@/components/WhatSetsUsApart";
-import Roadmap from "@/components/Roadmap";
 import TechStackScroll from "@/components/TechStackScroll";
 import PricingPlans from "@/components/PricingPlans";
 import Testimonials from "@/components/Testimonials";
@@ -20,7 +19,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <WhatSetsUsApart />
-      <Roadmap />
       <TechStackScroll />
       <PricingPlans />
       <Testimonials />

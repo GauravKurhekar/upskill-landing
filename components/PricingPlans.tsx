@@ -110,9 +110,10 @@ export default function PricingPlans() {
               viewport={{ once: true }}
               className={`relative rounded-2xl overflow-hidden ${
                 plan.popular
-                  ? "bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 shadow-2xl shadow-purple-300"
+                  ? "bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 shadow-2xl shadow-blue-400"
                   : "bg-white border-2 border-gray-200 shadow-lg hover:shadow-xl"
               } transition-all duration-300`}
+              style={plan.popular ? { background: "linear-gradient(135deg, #0089d6 0%, #0089d6 50%, #00a8e8 100%)" } : {}}
             >
               {/* Badge */}
               <div
