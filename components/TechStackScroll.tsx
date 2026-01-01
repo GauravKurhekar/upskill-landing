@@ -7,8 +7,8 @@ export default function TechStackScroll() {
   const technologies = [
     { name: "Azure Synapse Analytics", url: "https://ik.imagekit.io/qujrbo6v2/Azure%20Synapse%20Analytics%20Logo.webp" },
     { name: "Azure", url: "https://ik.imagekit.io/qujrbo6v2/azure-icon.svg" },
-    { name: "Data Factory", url: "https://ik.imagekit.io/qujrbo6v2/data_factory.png" },
-    { name: "Databricks", url: "https://ik.imagekit.io/qujrbo6v2/databricks.png" },
+    { name: "Databricks", url: "https://ik.imagekit.io/qujrbo6v2/databrickspng?updatedAt=1767283262946" },
+    { name: "Data Factory", url: "https://ik.imagekit.io/qujrbo6v2/data_factory_logo.png" },
     { name: "Azure DevOps", url: "https://ik.imagekit.io/qujrbo6v2/azure-devops.png" },
     { name: "PySpark", url: "https://ik.imagekit.io/qujrbo6v2/pyspark.png" },
     { name: "Agile", url: "https://ik.imagekit.io/qujrbo6v2/agile.png" },
@@ -56,16 +56,16 @@ export default function TechStackScroll() {
             {duplicatedTechs.map((tech, index) => (
               <motion.div
                 key={index}
-                className="flex-shrink-0 w-32 h-32 flex items-center justify-center bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 group cursor-pointer"
+                className="flex-shrink-0 w-40 h-40 flex items-center justify-center bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg hover:border-blue-300 transition-all duration-300 group cursor-pointer"
                 whileHover={{ scale: 1.05, y: -10 }}
               >
-              <div className="flex flex-col items-center justify-center h-full p-4 text-center">
+              <div className="flex flex-col items-center justify-center h-full p-6 text-center">
                   <Image
                     src={tech.url}
                     alt={tech.name}
                     width={80}
                     height={80}
-                    className="h-20 w-auto object-contain mb-3 group-hover:scale-110 transition-transform duration-300"
+                    className="h-20 w-auto object-contain mb-2 group-hover:scale-110 transition-transform duration-300"
                   />
                   <p className="text-sm font-medium text-gray-700 line-clamp-2 group-hover:text-blue-600">
                     {tech.name}

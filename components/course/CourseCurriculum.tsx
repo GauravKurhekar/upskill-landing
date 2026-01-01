@@ -305,7 +305,6 @@ export default function CourseCurriculum({ modules }: CourseCurriculumProps) {
                         }`}
                       >
                         <div>
-                          <h4 className="font-semibold text-sm">Module {module.order}</h4>
                           <p className={`text-xs mt-0.5 truncate ${selectedModule === module.id ? "text-blue-100" : "text-gray-400"}`}>{module.title}</p>
                           <p className={`text-xs mt-0.5 ${selectedModule === module.id ? "text-blue-100" : "text-gray-500"}`}>{module.lessons.length} lessons</p>
                         </div>
