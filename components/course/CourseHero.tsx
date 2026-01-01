@@ -221,7 +221,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
                 Enroll Now
               </motion.a>
               <motion.a
-                href="https://drive.google.com/uc?export=download&id=1kR9AgEYu6oHssxyw4c44Av_Tfxn8-bCm"
+                href="https://drive.google.com/uc?export=download&id=1MYQ33MUB46YK_lU8elCdQkgXmYed7b7E"
                 download="UpSkill-Academy-Curriculum.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
