@@ -26,7 +26,6 @@ export default function BookingSection() {
     "Expert Guidance from 9+ Years Experience",
     "Actionable Roadmap & Next Steps",
     "Interview Prep & Resume Tips",
-    "5 Exclusive Bonuses Included",
   ];
 
   return (

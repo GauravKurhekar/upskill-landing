@@ -86,11 +86,9 @@ export default function CTA() {
             <div className="grid md:grid-cols-2 gap-3 text-left">
               {[
                 "Personalized Career Mapping",
-                "Expert Guidance (9+ Years)",
+                "Expert Guidance (10+ Years)",
                 "Actionable Roadmap",
                 "Interview & Resume Tips",
-                "5 Exclusive Bonuses",
-                "Lifetime Access to Resources",
               ].map((item, index) => (
                 <motion.div
                   key={index}

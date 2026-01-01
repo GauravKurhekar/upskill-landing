@@ -40,9 +40,11 @@ export default function Navbar() {
             transition={{ delay: 0.2 }}
             className="flex-shrink-0"
           >
-            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              UpSkill Academy
-            </h1>
+            <img 
+              src="https://ik.imagekit.io/qujrbo6v2/Upskill_academy_transparant.png.png" 
+              alt="UpSkill Academy" 
+              className="h-12 md:h-16 w-auto"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
