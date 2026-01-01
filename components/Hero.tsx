@@ -110,13 +110,16 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a
-              href="#instructor"
-              className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-200 hover:border-blue-600"
+              href="/course"
+              className="px-8 py-4 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-300 hover:border-blue-600"
             >
               Meet Your Mentor
             </a>
             <a
-              href="/course"
+              href="https://docs.google.com/presentation/d/17kXcn91An1PYspDeYrKbtGdnTG0dTlQ2/export?format=pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 border-2 border-blue-300 hover:border-blue-600"
             >
               View Curriculum
