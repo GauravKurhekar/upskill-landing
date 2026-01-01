@@ -38,43 +38,35 @@ export default function VideoGallery() {
   const fallbackVideos = [
     {
       id: 1,
-      title: "Introduction to Azure Data Engineering",
-      thumbnail: "https://via.placeholder.com/640x360/3B82F6/FFFFFF?text=Video+1",
-      videoUrl: "YOUR_AWS_VIDEO_LINK_1", // Replace with your AWS S3 video URL
-      duration: "10:30",
-      description: "Learn the fundamentals of Azure Data Engineering",
+      title: "Student Success Story 1",
+      thumbnail: "https://img.youtube.com/vi/GLxjoa_aWKo/maxresdefault.jpg",
+      videoUrl: "https://youtu.be/GLxjoa_aWKo",
+      duration: "4:32",
+      description: "Real student testimonial and success story from our graduates",
     },
     {
       id: 2,
-      title: "Real-World Project Walkthrough",
-      thumbnail: "https://via.placeholder.com/640x360/8B5CF6/FFFFFF?text=Video+2",
-      videoUrl: "YOUR_AWS_VIDEO_LINK_2",
-      duration: "15:45",
-      description: "See how we build production-ready data pipelines",
+      title: "Student Success Story 2",
+      thumbnail: "https://img.youtube.com/vi/3xY0LuUYYHs/maxresdefault.jpg",
+      videoUrl: "https://youtu.be/3xY0LuUYYHs",
+      duration: "3:45",
+      description: "Real student testimonial and success story from our graduates",
     },
     {
       id: 3,
-      title: "Career Tips & Interview Prep",
-      thumbnail: "https://via.placeholder.com/640x360/EC4899/FFFFFF?text=Video+3",
-      videoUrl: "YOUR_AWS_VIDEO_LINK_3",
-      duration: "12:20",
-      description: "Master your data engineering interviews",
+      title: "Student Success Story 3",
+      thumbnail: "https://img.youtube.com/vi/Yv3UCBxkjrg/maxresdefault.jpg",
+      videoUrl: "https://youtu.be/Yv3UCBxkjrg",
+      duration: "5:10",
+      description: "Real student testimonial and success story from our graduates",
     },
     {
       id: 4,
-      title: "Azure Databricks Deep Dive",
-      thumbnail: "https://via.placeholder.com/640x360/10B981/FFFFFF?text=Video+4",
-      videoUrl: "YOUR_AWS_VIDEO_LINK_4",
-      duration: "18:15",
-      description: "Advanced Databricks concepts and best practices",
-    },
-    {
-      id: 5,
-      title: "Student Success Stories",
-      thumbnail: "https://via.placeholder.com/640x360/F59E0B/FFFFFF?text=Video+5",
-      videoUrl: "YOUR_AWS_VIDEO_LINK_5",
-      duration: "8:40",
-      description: "Real testimonials from our successful students",
+      title: "Student Success Story 4",
+      thumbnail: "https://img.youtube.com/vi/3fDqGVzihjc/maxresdefault.jpg",
+      videoUrl: "https://youtu.be/3fDqGVzihjc",
+      duration: "4:20",
+      description: "Real student testimonial and success story from our graduates",
     },
   ];
 
@@ -268,17 +260,21 @@ export default function VideoGallery() {
               <FaTimes className="w-6 h-6 text-white" />
             </button>
 
-            {/* Video Player */}
+            {/* Video Player - Using iframe for YouTube */}
             <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-video">
-                <ReactPlayer
-                  url={selectedVideo}
-                  playing={playing}
-                  controls
-                  width="100%"
-                  height="100%"
-                  onEnded={() => setPlaying(false)}
-                />
+                {selectedVideo && (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={selectedVideo.replace("youtu.be/", "youtube.com/embed/").replace("?feature=share", "")}
+                    title="UpSkill Academy Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                )}
               </div>
             </div>
           </motion.div>

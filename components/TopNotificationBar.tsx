@@ -42,7 +42,7 @@ export default function TopNotificationBar() {
 
           {/* WhatsApp CTA */}
           <a
-            href="https://whatsapp.com/channel/0029VaYgzzj5K3JxAhYqsL0n"
+            href="https://chat.whatsapp.com/KoZv2I4vDX56sk7Y1VXVm3"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-green-500 hover:bg-green-600 px-3 py-1 rounded-full transition-all duration-200 hover:scale-105"

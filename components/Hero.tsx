@@ -103,7 +103,9 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
           >
             <a
-              href="#booking"
+              href="https://tidycal.com/upskillacademy/30-minute-meeting"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               <span className="relative z-10">Book Your 1:1 Clarity Call</span>
