@@ -256,7 +256,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
                   animate={{ scale: 1 }}
                   transition={{ duration: 1 }}
                   onError={(e) => {
-                    e.currentTarget.src = "https://via.placeholder.com/600x400?text=Azure+Data+Engineering";
+                    e.currentTarget.src = "https://dummyimage.com/600x400/4F46E5/FFFFFF?text=Azure+Data+Engineering";
                   }}
                 />
                 <motion.div 
@@ -281,7 +281,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
                     className="w-16 h-16 rounded-full object-cover border-4 border-blue-100"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     onError={(e) => {
-                      e.currentTarget.src = "https://via.placeholder.com/64";
+                      e.currentTarget.src = "https://dummyimage.com/64x64/4F46E5/FFFFFF?text=Instructor";
                     }}
                   />
                   <div>

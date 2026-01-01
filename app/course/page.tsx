@@ -27,7 +27,7 @@ export default async function CoursePage() {
     description: "Master the art of building secure and scalable data pipelines in the cloud with Upskill Academy's Azure Data Engineering Course.",
     price: 0,
     currency: "INR",
-    thumbnail: "https://via.placeholder.com/1200x600",
+    thumbnail: "https://dummyimage.com/1200x600/4F46E5/FFFFFF?text=Azure+Data+Engineering",
     instructor: {
       name: "Gaurav Kurhekar",
       image: "https://ik.imagekit.io/a0ivf97jq/alop.png?updatedAt=1764168497635",

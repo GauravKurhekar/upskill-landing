@@ -52,7 +52,7 @@ export default function CourseInstructor({ instructor }: CourseInstructorProps) 
                   alt={instructor.name}
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.currentTarget.src = "https://via.placeholder.com/400x500?text=Instructor";
+                    e.currentTarget.src = "https://dummyimage.com/400x500/4F46E5/FFFFFF?text=Instructor";
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

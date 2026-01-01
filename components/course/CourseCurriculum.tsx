@@ -31,6 +31,7 @@ export default function CourseCurriculum({ modules }: CourseCurriculumProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedModule, setSelectedModule] = useState<string>("");
+  const isInitialized = useRef(false);
 
   // Live Sessions Data
   const liveSessions: Module[] = [
@@ -242,8 +243,9 @@ export default function CourseCurriculum({ modules }: CourseCurriculumProps) {
 
   // Set default selected module on mount using useEffect
   useEffect(() => {
-    if (!selectedModule && allModules.length > 0) {
+    if (!isInitialized.current && allModules.length > 0) {
       setSelectedModule(allModules[0].id);
+      isInitialized.current = true;
     }
   }, []);
 
