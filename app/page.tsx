@@ -3,6 +3,7 @@ import WhatSetsUsApart from "@/components/WhatSetsUsApart";
 import TechStackScroll from "@/components/TechStackScroll";
 import PricingPlans from "@/components/PricingPlans";
 import Testimonials from "@/components/Testimonials";
+import CommunityJoin from "@/components/CommunityJoin";
 import Instructor from "@/components/Instructor";
 import VideoGallery from "@/components/VideoGallery";
 import ContactCTA from "@/components/ContactCTA";
@@ -22,6 +23,7 @@ export default function Home() {
       <TechStackScroll />
       <PricingPlans />
       <Testimonials />
+      <CommunityJoin />
       <Instructor />
       <VideoGallery />
       <ContactCTA />
