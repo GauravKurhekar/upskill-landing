@@ -1,6 +1,6 @@
 "use client";
 
-import { FaLinkedin, FaTwitter, FaYoutube, FaInstagram, FaHeart } from "react-icons/fa";
+import { FaLinkedin, FaYoutube, FaInstagram, FaFacebook, FaWhatsapp, FaHeart } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,10 +27,11 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { Icon: FaLinkedin, href: "#", label: "LinkedIn" },
-    { Icon: FaTwitter, href: "#", label: "Twitter" },
-    { Icon: FaYoutube, href: "#", label: "YouTube" },
-    { Icon: FaInstagram, href: "#", label: "Instagram" },
+    { Icon: FaInstagram, href: "https://www.instagram.com/upskillacademyofficial/", label: "Instagram" },
+    { Icon: FaFacebook, href: "https://www.facebook.com/upskillacademytraining", label: "Facebook" },
+    { Icon: FaWhatsapp, href: "https://wa.me/917020269389", label: "WhatsApp" },
+    { Icon: FaYoutube, href: "https://www.youtube.com/@upskillacademyofficial", label: "YouTube" },
+    { Icon: FaLinkedin, href: "https://www.linkedin.com/company/upskillacademyofficial/", label: "LinkedIn" },
   ];
 
   return (
