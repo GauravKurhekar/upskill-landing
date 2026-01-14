@@ -26,7 +26,7 @@ export default function ContactCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {/* WhatsApp Button */}
             <motion.a
-              href="https://wa.me/917020268389"
+              href="https://wa.me/917020269389"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
@@ -36,7 +36,7 @@ export default function ContactCTA() {
               <FaWhatsapp className="text-2xl" />
               <div className="text-left">
                 <span className="text-xs text-white/80 block">WhatsApp / Call</span>
-                <span className="text-lg">70 20 268 389</span>
+                <span className="text-lg">70 20 269 389</span>
               </div>
             </motion.a>
 
