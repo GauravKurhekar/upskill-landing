@@ -44,7 +44,7 @@ export default function Navbar() {
             <img 
               src="https://ik.imagekit.io/qujrbo6v2/Upskill_academy_transparant.png.png" 
               alt="UpSkill Academy" 
-              className="h-12 md:h-16 w-auto"
+              className="h-10 md:h-14 w-auto"
             />
           </motion.div>
 
