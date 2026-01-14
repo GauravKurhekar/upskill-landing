@@ -23,7 +23,7 @@ export default function ContactCTA() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             {/* WhatsApp Button */}
             <motion.a
               href="https://wa.me/917020269389"
@@ -31,12 +31,12 @@ export default function ContactCTA() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
+              className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              <FaWhatsapp className="text-2xl" />
+              <FaWhatsapp className="text-xl" />
               <div className="text-left">
                 <span className="text-xs text-white/80 block">WhatsApp / Call</span>
-                <span className="text-lg">70 20 269 389</span>
+                <span className="text-sm font-semibold">70 20 269 389</span>
               </div>
             </motion.a>
 
@@ -45,12 +45,12 @@ export default function ContactCTA() {
               href="mailto:info@upskillacademy.in"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
+              className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              <FaEnvelope className="text-2xl" />
+              <FaEnvelope className="text-xl" />
               <div className="text-left">
                 <span className="text-xs text-white/80 block">Email Us</span>
-                <span className="text-lg">info@upskillacademy.in</span>
+                <span className="text-sm font-semibold">info@upskillacademy.in</span>
               </div>
             </motion.a>
           </div>
