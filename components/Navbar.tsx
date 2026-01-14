@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -96,15 +97,19 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <motion.a
-              href="#booking"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
+            <Link
+              href="/register"
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-semibold"
             >
-              Book Now
-            </motion.a>
+              <motion.span
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                className="block"
+              >
+                Register Now
+              </motion.span>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -171,13 +176,13 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <a
-              href="#booking"
+            <Link
+              href="/register"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-semibold text-center"
+              className="block mt-4 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-semibold text-center"
             >
-              Book Now
-            </a>
+              Register Now
+            </Link>
           </motion.div>
         )}
       </div>
