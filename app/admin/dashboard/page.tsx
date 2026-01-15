@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
@@ -15,7 +15,8 @@ import {
 } from "react-icons/fa";
 
 interface Lead {
-  id: string;
+  _id?: string;
+  id?: string;
   fullName: string;
   email: string;
   phone: string;
@@ -32,42 +33,23 @@ export default function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [adminEmail, setAdminEmail] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const [leads, setLeads] = useState<Lead[]>([
-    // Sample data
-    {
-      id: "1",
-      fullName: "John Doe",
-      email: "john@example.com",
-      phone: "+1 (555) 123-4567",
-      currentRole: "Software Developer",
-      experience: "junior",
-      courseInterest: "live-course",
-      courseFormat: "instructor-led",
-      submittedAt: "2024-01-14 10:30 AM",
-    },
-    {
-      id: "2",
-      fullName: "Sarah Smith",
-      email: "sarah@example.com",
-      phone: "+1 (555) 234-5678",
-      currentRole: "Data Analyst",
-      experience: "mid",
-      courseInterest: "recorded-course",
-      courseFormat: "self-paced",
-      submittedAt: "2024-01-14 09:15 AM",
-    },
-    {
-      id: "3",
-      fullName: "Michael Johnson",
-      email: "michael@example.com",
-      phone: "+1 (555) 345-6789",
-      currentRole: "IT Manager",
-      experience: "senior",
-      courseInterest: "rtp",
-      courseFormat: "hybrid",
-      submittedAt: "2024-01-13 04:45 PM",
-    },
-  ]);
+  const [leads, setLeads] = useState<Lead[]>([]);
+  const [error, setError] = useState("");
+  const [lastRefresh, setLastRefresh] = useState(new Date());
+
+  // Fetch leads from MongoDB
+  const fetchLeads = useCallback(async () => {
+    try {
+      const response = await fetch("/api/leads");
+      if (!response.ok) throw new Error("Failed to fetch leads");
+      const data = await response.json();
+      setLeads(data);
+      setError("");
+    } catch (err) {
+      console.error("Error fetching leads:", err);
+      setError("Failed to load leads from database");
+    }
+  }, []);
 
   useEffect(() => {
     // Check authentication
@@ -80,8 +62,19 @@ export default function AdminDashboard() {
       setAdminEmail(email || "");
       setIsAuthenticated(true);
       setIsLoading(false);
+      
+      // Fetch leads from MongoDB
+      fetchLeads();
+      
+      // Poll for new leads every 5 seconds
+      const interval = setInterval(() => {
+        fetchLeads();
+        setLastRefresh(new Date());
+      }, 5000);
+      
+      return () => clearInterval(interval);
     }
-  }, [router]);
+  }, [router, fetchLeads]);
 
   const handleLogout = () => {
     localStorage.removeItem("adminAuthToken");
@@ -156,17 +149,30 @@ export default function AdminDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600 text-sm">Welcome back, {adminEmail}</p>
+            <p className="text-gray-600 text-sm">Welcome back, {adminEmail} • Last refreshed: {lastRefresh.toLocaleTimeString()}</p>
           </div>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={handleLogout}
-            className="flex items-center gap-2 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition"
-          >
-            <FaSignOutAlt />
-            Logout
-          </motion.button>
+          <div className="flex items-center gap-3">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                setIsLoading(true);
+                fetchLeads().finally(() => setIsLoading(false));
+              }}
+              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm"
+            >
+              🔄 Refresh
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleLogout}
+              className="flex items-center gap-2 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition"
+            >
+              <FaSignOutAlt />
+              Logout
+            </motion.button>
+          </div>
         </div>
       </header>
 

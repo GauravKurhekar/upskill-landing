@@ -67,41 +67,42 @@ export default function RegistrationForm() {
     setIsSubmitting(true);
 
     try {
-      // Here you can add your API call to submit the form
-      console.log("⏳ Waiting 1.5 seconds...");
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // Save to localStorage
-      console.log("💾 Saving to localStorage...");
-      const existingLeads = localStorage.getItem("registrationLeads");
-      console.log("Existing leads:", existingLeads);
-      
-      const leads = existingLeads ? JSON.parse(existingLeads) : [];
-      console.log("Parsed leads array:", leads);
+      // Save to MongoDB via API
+      console.log("💾 Saving to MongoDB...");
       
       const newLead = {
-        id: Date.now().toString(),
         ...formData,
-        submittedAt: new Date().toLocaleString(),
+        submittedAt: new Date().toISOString(),
       };
       
-      console.log("New lead object:", newLead);
-      
-      leads.push(newLead);
-      console.log("Updated leads array:", leads);
-      
-      const jsonString = JSON.stringify(leads);
-      console.log("JSON string to save:", jsonString);
-      
-      localStorage.setItem("registrationLeads", jsonString);
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newLead),
+      });
 
-      console.log("✅✅✅ Form saved successfully!");
-      console.log("New lead:", newLead);
-      console.log("All leads in storage:", leads);
-      console.log("localStorage check:", localStorage.getItem("registrationLeads"));
+      if (!response.ok) {
+        throw new Error("Failed to save to database");
+      }
+
+      const savedLead = await response.json();
+      console.log("✅ Lead saved to MongoDB:", savedLead);
+
+      // Also save to localStorage for backup
+      const existingLeads = localStorage.getItem("registrationLeads");
+      const leads = existingLeads ? JSON.parse(existingLeads) : [];
+      leads.push({
+        id: savedLead._id || Date.now().toString(),
+        ...newLead,
+      });
+      localStorage.setItem("registrationLeads", JSON.stringify(leads));
+
+      console.log("✅✅✅ Form saved successfully to both MongoDB and localStorage!");
       
       // Show alert to confirm
-      alert("✅ Data saved! Check console for details.");
+      alert("✅ Registration saved! You'll hear from us soon.");
       
       setSubmitSuccess(true);
 
@@ -119,9 +120,11 @@ export default function RegistrationForm() {
         setSubmitSuccess(false);
       }, 3000);
     } catch (error) {
-      console.error("❌ Error in try block:", error);
-      alert("Error: " + error);
-      setErrors({ submit: "Failed to submit form. Please try again." });
+      console.error("❌ Error submitting form:", error);
+      setErrors({
+        submit: error instanceof Error ? error.message : "Failed to submit form. Please try again.",
+      });
+      alert("❌ Error: " + (error instanceof Error ? error.message : "Failed to submit"));
     } finally {
       setIsSubmitting(false);
     }
