@@ -14,7 +14,10 @@ export async function connectToDatabase() {
     throw new Error('MONGODBURI is not defined in environment variables');
   }
 
-  const client = new MongoClient(MONGODB_URI as string);
+  const client = new MongoClient(MONGODB_URI as string, {
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000,
+  });
   await client.connect();
   const db = client.db('upskill_academy');
 
