@@ -5,7 +5,7 @@ import { ObjectId } from 'mongodb';
 export async function GET() {
   try {
     console.log('Attempting to fetch leads...');
-    console.log('MONGODBURI exists:', !!process.env.MONGODBURI);
+    console.log('MONGODB_URI exists:', !!process.env.MONGODB_URI);
     const collection = await getLeadsCollection();
     const leads = await collection.find({}).sort({ submittedAt: -1 }).toArray();
     
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
   try {
     console.log('Attempting to save lead...');
     const body = await request.json();
-    console.log('MONGODBURI exists:', !!process.env.MONGODBURI);
+    console.log('MONGODB_URI exists:', !!process.env.MONGODB_URI);
     const collection = await getLeadsCollection();
 
     // Add timestamp if not present

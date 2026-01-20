@@ -8,10 +8,10 @@ export async function connectToDatabase() {
     return { client: cachedClient, db: cachedDb };
   }
 
-  const MONGODB_URI = process.env.MONGODBURI;
+  const MONGODB_URI = process.env.MONGODB_URI;
   
   if (!MONGODB_URI) {
-    throw new Error('MONGODBURI is not defined in environment variables');
+    throw new Error('MONGODB_URI is not defined in environment variables');
   }
 
   const client = new MongoClient(MONGODB_URI as string, {
