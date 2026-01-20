@@ -12,9 +12,9 @@ export default function AdminLogin() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Hardcoded admin credentials (for demo - change in production!)
-  const ADMIN_EMAIL = "admin@upskill.com";
-  const ADMIN_PASSWORD = "UpSkill@2024";
+  // Admin credentials (use environment variables in production)
+  const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || "gaurav04@gmail.com";
+  const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "Upskill@2025";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,7 +69,7 @@ export default function AdminLogin() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@upskill.com"
+                placeholder="Enter your email"
                 className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                 required
               />
@@ -116,13 +116,6 @@ export default function AdminLogin() {
             {isLoading ? "Signing in..." : "Sign In"}
           </motion.button>
         </form>
-
-        {/* Demo Credentials */}
-        <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <p className="text-xs font-semibold text-blue-900 mb-2">Demo Credentials:</p>
-          <p className="text-xs text-blue-800">Email: <code className="font-mono font-bold">admin@upskill.com</code></p>
-          <p className="text-xs text-blue-800">Password: <code className="font-mono font-bold">UpSkill@2024</code></p>
-        </div>
       </motion.div>
     </div>
   );

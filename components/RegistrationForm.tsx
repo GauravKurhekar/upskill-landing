@@ -228,7 +228,7 @@ export default function RegistrationForm() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+91 98765 43210"
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition ${
                     errors.phone ? "border-red-500" : "border-gray-300"
                   }`}

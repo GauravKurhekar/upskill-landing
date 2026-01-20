@@ -24,7 +24,7 @@ export default function TopNotificationBar() {
           <div className="flex items-center gap-1.5">
             <FaCalendarAlt className="text-yellow-300 text-sm" />
             <span className="font-semibold">
-              New batch starts <span className="text-yellow-300">15 Jan</span>
+              New batch starts <span className="text-yellow-300">5 Feb</span>
             </span>
           </div>
 
@@ -34,7 +34,7 @@ export default function TopNotificationBar() {
           <div className="flex items-center gap-1.5">
             <FaPlay className="text-green-300 text-xs" />
             <span>
-              FREE demo on <span className="text-green-300 font-semibold">11 Jan</span>
+              FREE demo on <span className="text-green-300 font-semibold">1 Feb</span>
             </span>
           </div>
 
@@ -42,7 +42,7 @@ export default function TopNotificationBar() {
 
           {/* WhatsApp CTA */}
           <a
-            href="https://chat.whatsapp.com/KoZv2I4vDX56sk7Y1VXVm3"
+            href="https://chat.whatsapp.com/KwF8Tdg3PLD46wrCCUWkSn"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-green-500 hover:bg-green-600 px-3 py-1 rounded-full transition-all duration-200 hover:scale-105"
