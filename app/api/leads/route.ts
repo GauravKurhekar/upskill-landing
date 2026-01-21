@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getLeadsCollection } from '@/lib/mongodb';
 import { ObjectId } from 'mongodb';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     console.log('Attempting to fetch leads...');

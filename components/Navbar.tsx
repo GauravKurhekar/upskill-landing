@@ -42,7 +42,7 @@ export default function Navbar() {
             className="flex-shrink-0"
           >
             <img 
-              src="https://ik.imagekit.io/qujrbo6v2/Upskill_academy_transparant.png.png" 
+              src="https://ik.imagekit.io/qujrbo6v2/Upskill_Academy_Transparant.png?updatedAt=1768900276145" 
               alt="UpSkill Academy" 
               className="h-10 md:h-14 w-auto"
             />
