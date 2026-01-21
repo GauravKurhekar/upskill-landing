@@ -70,7 +70,7 @@ export default function CTA() {
             </div>
             <div className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-xl p-5 shadow-md">
               <FaCalendarAlt className="w-6 h-6 text-blue-600 mb-2 mx-auto" />
-              <div className="text-gray-900 font-semibold text-base">1 AM - 9 PM</div>
+              <div className="text-gray-900 font-semibold text-base">9 AM - 9 PM</div>
               <div className="text-gray-600 text-sm">Available Slots (IST)</div>
             </div>
           </motion.div>

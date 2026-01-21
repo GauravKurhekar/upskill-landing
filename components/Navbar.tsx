@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import { FaBars, FaTimes, FaChevronDown, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -112,8 +112,16 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and actions */}
+          <div className="md:hidden flex items-center gap-2">
+            {/* Mobile Register button */}
+            <Link
+              href="/register"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1.5 rounded-full hover:shadow-lg transition-all duration-300 font-semibold text-sm"
+            >
+              Register
+            </Link>
+            {/* Hamburger menu button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-gray-700 hover:text-blue-600 transition-colors"
@@ -176,13 +184,6 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <Link
-              href="/register"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block mt-4 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-semibold text-center"
-            >
-              Register Now
-            </Link>
           </motion.div>
         )}
       </div>

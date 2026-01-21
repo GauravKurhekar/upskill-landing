@@ -81,7 +81,7 @@ export default function Instructor() {
                       </li>
                       <li className="flex items-start gap-3">
                         <FaAward className="w-5 h-5 text-purple-600 flex-shrink-0 mt-1" />
-                        <span className="text-gray-700">100+ Students Mentored</span>
+                        <span className="text-gray-700">1000+ Students Mentored</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <FaStar className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
