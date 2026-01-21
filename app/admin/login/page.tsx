@@ -12,26 +12,29 @@ export default function AdminLogin() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Admin credentials (use environment variables in production)
-  const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || "gaurav04@gmail.com";
-  const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "Upskill@2025";
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      // Call the admin auth API endpoint
+      const response = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-      if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+      if (response.ok) {
         // Store auth token in localStorage
         localStorage.setItem("adminAuthToken", "demo-token-" + Date.now());
         localStorage.setItem("adminEmail", email);
         router.push("/admin/dashboard");
       } else {
-        setError("Invalid email or password");
+        const errorData = await response.json();
+        setError(errorData.error || "Invalid email or password");
       }
     } catch (err) {
       setError("Login failed. Please try again.");

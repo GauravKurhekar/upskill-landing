@@ -31,3 +31,8 @@ export async function getLeadsCollection() {
   const { db } = await connectToDatabase();
   return db.collection('leads');
 }
+
+export async function getAdminCollection() {
+  const { db } = await connectToDatabase();
+  return db.collection('admins');
+}
