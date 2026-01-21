@@ -12,7 +12,7 @@ const bcrypt = require('bcryptjs');
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const ADMIN_EMAIL = 'upskillacademy.training@gmail.com';
-const ADMIN_PASSWORD = 'Upskill@2025';
+const ADMIN_PASSWORD = 'Academyupskill@04';
 
 async function setupAdmin() {
   if (!MONGODB_URI) {
