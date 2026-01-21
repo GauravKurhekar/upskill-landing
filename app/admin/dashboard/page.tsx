@@ -142,216 +142,253 @@ export default function AdminDashboard() {
     return null;
   }
 
+  const formatDate = (dateString: string) => {
+    try {
+      const date = new Date(dateString);
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const year = date.getFullYear();
+      const hours = String(date.getHours()).padStart(2, '0');
+      const minutes = String(date.getMinutes()).padStart(2, '0');
+      return `${day}/${month}/${year} ${hours}:${minutes}`;
+    } catch {
+      return dateString;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600 text-sm">Welcome back, {adminEmail} • Last refreshed: {lastRefresh.toLocaleTimeString()}</p>
-          </div>
-          <div className="flex items-center gap-3">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                setIsLoading(true);
-                fetchLeads().finally(() => setIsLoading(false));
-              }}
-              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm"
-            >
-              🔄 Refresh
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={handleLogout}
-              className="flex items-center gap-2 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition"
-            >
-              <FaSignOutAlt />
-              Logout
-            </motion.button>
-          </div>
+    <div className="min-h-screen bg-gray-100 flex">
+      {/* Sidebar */}
+      <aside className="w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+        <div className="p-6 border-b border-slate-700">
+          <h1 className="text-2xl font-bold">UpSkill Academy</h1>
+          <p className="text-slate-400 text-sm mt-1">Admin Panel</p>
         </div>
-      </header>
+        <nav className="p-6">
+          <div className="space-y-6">
+            <div>
+              <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-3">Main</p>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/admin/dashboard" className="flex items-center gap-3 px-4 py-2 rounded-lg bg-slate-700 bg-opacity-50">
+                    <span>📊</span>
+                    <span>Dashboard</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-3">Data</p>
+              <ul className="space-y-2">
+                <li>
+                  <button onClick={handleDownloadCSV} className="w-full text-left flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-slate-700 hover:bg-opacity-50 transition">
+                    <span>📥</span>
+                    <span>Export CSV</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div className="absolute bottom-6">
+              <button
+                onClick={handleLogout}
+                className="w-full flex items-center gap-3 px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 transition font-medium"
+              >
+                <FaSignOutAlt />
+                <span>Logout</span>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </aside>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-lg shadow p-6 border-l-4 border-blue-600"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-600 text-sm">Total Leads</p>
-                <p className="text-3xl font-bold text-gray-900">{leads.length}</p>
-              </div>
-              <FaUsers className="text-4xl text-blue-600 opacity-20" />
+      <div className="flex-1 flex flex-col">
+        {/* Header */}
+        <header className="bg-white border-b border-gray-300">
+          <div className="px-8 py-6 flex justify-between items-center">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+              <p className="text-gray-600 text-sm">Welcome back, {adminEmail}</p>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="bg-white rounded-lg shadow p-6 border-l-4 border-purple-600"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-600 text-sm">This Month</p>
-                <p className="text-3xl font-bold text-gray-900">{leads.length}</p>
-              </div>
-              <FaEnvelope className="text-4xl text-purple-600 opacity-20" />
+            <div className="flex items-center gap-2 text-gray-600 text-sm">
+              <span>🔄 Last refreshed: {lastRefresh.toLocaleTimeString()}</span>
             </div>
-          </motion.div>
+          </div>
+        </header>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-lg shadow p-6 border-l-4 border-green-600"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-600 text-sm">Conversion Rate</p>
-                <p className="text-3xl font-bold text-gray-900">-</p>
-              </div>
-              <FaBriefcase className="text-4xl text-green-600 opacity-20" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="bg-white rounded-lg shadow p-6 border-l-4 border-orange-600"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-600 text-sm">Response Rate</p>
-                <p className="text-3xl font-bold text-gray-900">-</p>
-              </div>
-              <FaBook className="text-4xl text-orange-600 opacity-20" />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Leads Table */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="bg-white rounded-lg shadow overflow-hidden"
-        >
-          {/* Table Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 flex justify-between items-center">
-            <h2 className="text-xl font-bold">Recent Leads</h2>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={handleDownloadCSV}
-              className="flex items-center gap-2 bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition"
+        {/* Main Content Area */}
+        <main className="flex-1 overflow-auto p-8">
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white rounded-lg shadow p-6 border-l-4 border-blue-600"
             >
-              <FaDownload />
-              Export CSV
-            </motion.button>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-600 text-sm">Total Leads</p>
+                  <p className="text-3xl font-bold text-gray-900">{leads.length}</p>
+                </div>
+                <FaUsers className="text-4xl text-blue-600 opacity-20" />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-lg shadow p-6 border-l-4 border-purple-600"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-600 text-sm">This Month</p>
+                  <p className="text-3xl font-bold text-gray-900">{leads.length}</p>
+                </div>
+                <FaEnvelope className="text-4xl text-purple-600 opacity-20" />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-lg shadow p-6 border-l-4 border-green-600"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-600 text-sm">Conversion Rate</p>
+                  <p className="text-3xl font-bold text-gray-900">-</p>
+                </div>
+                <FaBriefcase className="text-4xl text-green-600 opacity-20" />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-lg shadow p-6 border-l-4 border-orange-600"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-gray-600 text-sm">Response Rate</p>
+                  <p className="text-3xl font-bold text-gray-900">-</p>
+                </div>
+                <FaBook className="text-4xl text-orange-600 opacity-20" />
+              </div>
+            </motion.div>
           </div>
 
-          {/* Search */}
-          <div className="p-6 border-b border-gray-200">
-            <div className="relative">
-              <FaSearch className="absolute left-4 top-4 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search by name, email, or phone..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+          {/* Leads Table */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="bg-white rounded-lg shadow overflow-hidden"
+          >
+            {/* Table Header */}
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 flex justify-between items-center">
+              <h2 className="text-xl font-bold">Recent Leads ({filteredLeads.length})</h2>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  setIsLoading(true);
+                  fetchLeads().finally(() => setIsLoading(false));
+                }}
+                className="flex items-center gap-2 bg-white bg-opacity-20 hover:bg-opacity-30 px-4 py-2 rounded-lg transition text-sm"
+              >
+                🔄 Refresh
+              </motion.button>
             </div>
-          </div>
 
-          {/* Table */}
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-gray-50 border-b border-gray-200">
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Name
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Email
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Phone
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Current Role
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Experience
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Course
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Format
-                  </th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
-                    Submitted
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {filteredLeads.length > 0 ? (
-                  filteredLeads.map((lead, index) => (
-                    <motion.tr
-                      key={lead.id}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: index * 0.05 }}
-                      className="hover:bg-gray-50 transition"
-                    >
-                      <td className="px-6 py-4 text-sm text-gray-900 font-medium">
-                        {lead.fullName}
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">{lead.email}</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">{lead.phone}</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">{lead.currentRole}</td>
-                      <td className="px-6 py-4 text-sm">
-                        <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
-                          {lead.experience}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 text-sm">
-                        <span className="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
-                          {lead.courseInterest.replace("-", " ")}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 text-sm">
-                        <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
-                          {lead.courseFormat.replace("-", " ")}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">{lead.submittedAt}</td>
-                    </motion.tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan={8} className="px-6 py-8 text-center text-gray-500">
-                      No leads found matching your search.
-                    </td>
+            {/* Search */}
+            <div className="p-6 border-b border-gray-200">
+              <div className="relative">
+                <FaSearch className="absolute left-4 top-4 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search by name, email, or phone..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </div>
+
+            {/* Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200">
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                      Name
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                      Email
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                      Phone
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                      Role
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                      Course
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                      Format
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">
+                      Submitted
+                    </th>
                   </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
-        </motion.div>
-      </main>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  {filteredLeads.length > 0 ? (
+                    filteredLeads.map((lead, index) => (
+                      <motion.tr
+                        key={lead.id}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: index * 0.05 }}
+                        className="hover:bg-gray-50 transition"
+                      >
+                        <td className="px-6 py-4 text-sm text-gray-900 font-medium">
+                          {lead.fullName}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-600">{lead.email}</td>
+                        <td className="px-6 py-4 text-sm text-gray-600">{lead.phone}</td>
+                        <td className="px-6 py-4 text-sm text-gray-600">{lead.currentRole}</td>
+                        <td className="px-6 py-4 text-sm">
+                          <span className="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-semibold">
+                            {lead.courseInterest.replace("-", " ")}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-sm">
+                          <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
+                            {lead.courseFormat.replace("-", " ")}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-sm text-gray-600 font-mono">
+                          {formatDate(lead.submittedAt)}
+                        </td>
+                      </motion.tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan={7} className="px-6 py-8 text-center text-gray-500">
+                        No leads found matching your search.
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </motion.div>
+        </main>
+      </div>
     </div>
   );
 }

@@ -24,6 +24,10 @@ export default function Footer() {
       { name: "Refund Policy", href: "#" },
       { name: "Cookie Policy", href: "#" },
     ],
+    Client: [
+      { name: "Login Dashboard", href: "/admin/login" },
+      { name: "View Leads", href: "/admin/dashboard" },
+    ],
   };
 
   const socialLinks = [
