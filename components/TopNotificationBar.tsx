@@ -24,7 +24,7 @@ export default function TopNotificationBar() {
           <div className="flex items-center gap-1.5">
             <FaCalendarAlt className="text-yellow-300 text-sm" />
             <span className="font-semibold">
-              New batch starts <span className="text-yellow-300">5 Feb</span>
+              New batch starts <span className="text-yellow-300">28 Feb</span>
             </span>
           </div>
 
@@ -34,7 +34,7 @@ export default function TopNotificationBar() {
           <div className="flex items-center gap-1.5">
             <FaPlay className="text-green-300 text-xs" />
             <span>
-              FREE demo on <span className="text-green-300 font-semibold">28 Feb</span>
+              FREE demo on <span className="text-green-300 font-semibold">22 Feb</span>
             </span>
           </div>
 
