@@ -34,7 +34,7 @@ export default function TopNotificationBar() {
           <div className="flex items-center gap-1.5">
             <FaPlay className="text-green-300 text-xs" />
             <span>
-              FREE demo on <span className="text-green-300 font-semibold">1 Feb</span>
+              FREE demo on <span className="text-green-300 font-semibold">28 Feb</span>
             </span>
           </div>
 
@@ -42,7 +42,7 @@ export default function TopNotificationBar() {
 
           {/* WhatsApp CTA */}
           <a
-            href="https://chat.whatsapp.com/KwF8Tdg3PLD46wrCCUWkSn"
+            href="https://chat.whatsapp.com/KwF8Tdg3PLD46wrCCUWkSn?mode=gi_t"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 bg-green-500 hover:bg-green-600 px-3 py-1 rounded-full transition-all duration-200 hover:scale-105"
